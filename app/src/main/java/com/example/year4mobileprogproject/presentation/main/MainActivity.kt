@@ -19,18 +19,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainViewModel.onStart()
+
 
 
         initRecyclerView()
-        addDataSet()
+        mainViewModel.addDataSet()
     }
 
-    private fun addDataSet(){
-        val data =
-            DataSource.createDataSet()
-        movieAdapter.submitList(data)
-    }
+   /*
 
     private fun initRecyclerView(){
 
@@ -43,6 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    }
+    }*/
 
 }

@@ -1,7 +1,6 @@
 package com.example.year4mobileprogproject.injection
 
 import android.content.Context
-import androidx.room.Database
 import androidx.room.Room
 import com.example.year4mobileprogproject.data.local.AppDatabase
 import com.example.year4mobileprogproject.data.local.DatabaseDao

@@ -8,14 +8,20 @@ import com.example.year4mobileprogproject.MovieRecyclerAdapter
 import com.example.year4mobileprogproject.TopSpacingItemDecoration
 import com.example.year4mobileprogproject.domain.entity.User
 import com.example.year4mobileprogproject.domain.usecase.CreateUserUseCase
+import com.example.year4mobileprogproject.domain.usecase.GetUserUseCase
 import com.example.year4mobileprogproject.injection.DataSource
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class MainViewModel(private val createUserUseCase: CreateUserUseCase) : ViewModel(){
+class MainViewModel(private val createUserUseCase: CreateUserUseCase,
+                    private val getUserUseCase: GetUserUseCase
+) : ViewModel(){
 
     private lateinit var movieAdapter: MovieRecyclerAdapter
+
 
 
     val counter: MutableLiveData<Int> = MutableLiveData()
@@ -24,10 +30,13 @@ class MainViewModel(private val createUserUseCase: CreateUserUseCase) : ViewMode
         counter.value = 0
     }
 
-    fun OnClickedIncrement(emailUser: String){
+    suspend fun OnClickedIncrement(emailUser: String){
 
-        viewModelScope.launch { createUserUseCase.invoke(User(emailUser))
+        viewModelScope.launch(Dispatchers.IO) { createUserUseCase.invoke(User("test"))
         }
+       delay(1000)
+        val user = getUserUseCase.invoke("test")
+
 
         //counter.value = (counter.value ?: 0) + 1
 

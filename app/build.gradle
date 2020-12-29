@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -48,6 +49,14 @@ dependencies {
 
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
+    def room_version = "2.2.6"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
     //glide
     def glide_version = "4.8.0"
     implementation "com.github.bumptech.glide:glide:$glide_version"
@@ -55,13 +64,29 @@ dependencies {
 
     // Koin for Kotlin
     implementation "org.koin:koin-core:$koin_version"
-// Koin extended & experimental features
+    // Koin extended & experimental features
     implementation "org.koin:koin-core-ext:$koin_version"
-// Koin for Unit tests
+    // Koin for Unit tests
     testImplementation "org.koin:koin-test:$koin_version"
 
+    // Koin for Android
+    implementation "org.koin:koin-android:$koin_version"
+    // Koin Android Scope features
+    implementation "org.koin:koin-android-scope:$koin_version"
+    // Koin Android ViewModel features
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+    // Koin Android Experimental features
+    implementation "org.koin:koin-android-ext:$koin_version"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    // Koin AndroidX Scope features
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    // Koin AndroidX ViewModel features
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    // Koin AndroidX Fragment features
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
     // Koin AndroidX Experimental features
     implementation "org.koin:koin-androidx-ext:$koin_version"
-
 
 }

@@ -14,7 +14,7 @@ class MyApplication : Application(){
             // Android context
             androidContext(this@MyApplication)
             // modules
-            modules(presentationModule)
+            modules(presentationModule, domainModule, dataModule)
         }
     }
 

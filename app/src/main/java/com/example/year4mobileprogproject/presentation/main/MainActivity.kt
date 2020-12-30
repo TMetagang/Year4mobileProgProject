@@ -14,14 +14,14 @@ import org.koin.android.ext.android.inject
 class MainActivity : AppCompatActivity() {
 
     private lateinit var movieAdapter: MovieRecyclerAdapter
-    val mainViewModel : MainViewModel by inject()
+    private val mainViewModel : MainViewModel by inject()
     private lateinit var listMovie : ArrayList<moviePost>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainViewModel.onStart()//MainViewModel will generate the data
+        mainViewModel.onStart("")//MainViewModel will generate the data
 
         //If the list of data in mainViewModel changes, then the followings actions are done
         mainViewModel.list.observe(this) {

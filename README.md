@@ -19,7 +19,7 @@ This application shows the latest android courses post from particular youtubers
 - Language Kotlin
 - Architecture MVVM
 - Clean architecture
-- API call didn't work 
+- API call didn't work for this reason I used dummy posts
 
 ## Recyclerview
 

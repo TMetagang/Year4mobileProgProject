@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.year4mobileprogproject.injection.moviePost
+import com.example.year4mobileprogproject.injection.androidTutoPost
 import kotlinx.android.synthetic.main.layout_movie_list_item.view.*
 
 
 class MovieRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-    private var items: List<moviePost> = ArrayList()
+    private var items: List<androidTutoPost> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -37,7 +37,7 @@ class MovieRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     }
 
 
-    fun submitList(movieList: List<moviePost>){
+    fun submitList(movieList: List<androidTutoPost>){
 
         items = movieList
     }
@@ -51,7 +51,7 @@ class MovieRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
        val movieTitle  = itemView.movie_title
        val movieAuthor = itemView.movie_author
 
-       fun bind(moviePost: moviePost){
+       fun bind(moviePost: androidTutoPost){
 
            movieTitle.setText(moviePost.title)
            movieAuthor.setText(moviePost.username)

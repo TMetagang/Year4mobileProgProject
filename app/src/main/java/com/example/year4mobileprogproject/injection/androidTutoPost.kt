@@ -1,6 +1,6 @@
 package com.example.year4mobileprogproject.injection
 
-class moviePost(
+class androidTutoPost(
 
     var title: String,
     var body: String,

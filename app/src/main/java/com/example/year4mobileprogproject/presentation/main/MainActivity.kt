@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.year4mobileprogproject.MovieRecyclerAdapter
 import com.example.year4mobileprogproject.R
 import com.example.year4mobileprogproject.TopSpacingItemDecoration
-import com.example.year4mobileprogproject.injection.moviePost
+import com.example.year4mobileprogproject.injection.androidTutoPost
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var movieAdapter: MovieRecyclerAdapter
     private val mainViewModel : MainViewModel by inject()
-    private lateinit var listMovie : ArrayList<moviePost>
+    private lateinit var listMovie : ArrayList<androidTutoPost>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

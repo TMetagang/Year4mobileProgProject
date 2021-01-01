@@ -19,7 +19,6 @@ This application shows the latest android courses post from particular youtubers
 - Language Kotlin
 - Architecture MVVM
 - Clean architecture
-- Copyright
 - API call didn't work 
 
 ## Recyclerview
